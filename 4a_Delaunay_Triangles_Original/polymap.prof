@@ -1,0 +1,111 @@
+	Tue Jul 02 10:55 2013 Time and Allocation Profiling Report  (Final)
+
+	   polymap +RTS -p -RTS
+
+	total time  =       32.30 secs   (32298 ticks @ 1000 us, 1 processor)
+	total alloc = 11,357,293,636 bytes  (excludes profiling overheads)
+
+COST CENTRE      MODULE  %time %alloc
+
+distance         Math     53.2   56.8
+ptInCir          Math     19.2   11.8
+removeItem       Math     11.5   13.4
+==               Math     10.3   13.5
+checkTri2.badPts Math      1.9    1.7
+
+
+                                                                              individual     inherited
+COST CENTRE                   MODULE                        no.     entries  %time %alloc   %time %alloc
+
+MAIN                          MAIN                           77           0    0.0    0.0   100.0  100.0
+ CAF                          GHC.IO.Encoding.CodePage      143           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.Float                     135           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Encoding               134           0    0.0    0.0     0.0    0.0
+ CAF                          GHC.IO.Handle.FD              132           0    0.0    0.0     0.0    0.0
+ CAF                          Graphics.Gloss.Data.Color      89           0    0.0    0.0     0.0    0.0
+ CAF                          Graphics.Gloss.Data.Picture    88           0    0.0    0.0     0.0    0.0
+ CAF                          Main                           85           0    0.0    0.0   100.0  100.0
+  myColor                     Main                          236           1    0.0    0.0     0.0    0.0
+  ltGray                      Main                          209           1    0.0    0.0     0.0    0.0
+  randomSeed                  Main                          173           1    0.0    0.0     0.0    0.0
+  maxR                        Main                          172           1    0.0    0.0     0.0    0.0
+  minR                        Main                          171           1    0.0    0.0     0.0    0.0
+  numDots                     Main                          167           1    0.0    0.0     0.0    0.0
+  floatList                   Main                          165           1    0.0    0.0     0.0    0.0
+   toFloat                    Main                          170         200    0.0    0.0     0.0    0.0
+   randomInts                 Main                          166           1    0.0    0.0     0.0    0.0
+  ptList                      Main                          163           1    0.0    0.0     0.0    0.0
+   floatToPt                  Main                          164         101    0.0    0.0     0.0    0.0
+  allTris                     Main                          160           1    0.0    0.0     0.6    0.6
+   combinations               Main                          162      323399    0.4    0.4     0.4    0.4
+   ptToTri                    Main                          161      161701    0.2    0.1     0.2    0.1
+  goodTris                    Main                          158           1    0.0    0.0    99.3   99.4
+   delaunayTri                Math                          159      161701    0.1    0.0    99.3   99.4
+    checkTri2                 Math                          168      161700    0.5    0.3    99.3   99.3
+     checkTri2.checkPts       Math                          182      161696    0.0    0.1    21.8   27.0
+      removeItem              Math                          183    48508800   11.5   13.4    21.8   26.9
+       ==                     Math                          184    48023712   10.3   13.5    10.3   13.5
+     checkTri2.badPts         Math                          181      161696    1.9    1.7    76.3   71.7
+      circumscribeTri         Math                          187      161696    0.0    0.1     2.9    2.5
+       circumscribeTri.radius Math                          205      161696    0.0    0.0     1.2    1.1
+        distance              Math                          206      161696    1.2    1.1     1.2    1.1
+       circumscribeTri.center Math                          188      161696    0.0    0.0     1.6    1.4
+        centerFromPts         Math                          189      161696    0.1    0.2     1.6    1.4
+         centerFromPts.newY   Math                          207      161696    0.4    0.4     0.4    0.4
+         centerFromPts.mB     Math                          198      161696    0.0    0.0     0.2    0.2
+          lineSlope           Math                          199      161696    0.1    0.1     0.2    0.1
+           lineSlope.mX       Math                          203      161696    0.0    0.0     0.0    0.0
+            slopeHelper       Math                          204      161696    0.0    0.0     0.0    0.0
+           lineSlope.mY       Math                          201      161696    0.0    0.0     0.0    0.0
+            slopeHelper       Math                          202      161696    0.0    0.0     0.0    0.0
+           lineSlope.m        Math                          200      161696    0.0    0.0     0.0    0.0
+         centerFromPts.mA     Math                          191      161696    0.0    0.0     0.3    0.2
+          lineSlope           Math                          192      161696    0.1    0.1     0.3    0.1
+           lineSlope.mX       Math                          196      161696    0.0    0.0     0.0    0.0
+            slopeHelper       Math                          197      161696    0.0    0.0     0.0    0.0
+           lineSlope.mY       Math                          194      161696    0.0    0.0     0.1    0.0
+            slopeHelper       Math                          195      161696    0.1    0.0     0.1    0.0
+           lineSlope.m        Math                          193      161696    0.0    0.0     0.0    0.0
+         centerFromPts.newX   Math                          190      161696    0.6    0.5     0.6    0.5
+      ptInCirRev              Math                          185    15684512    0.4    0.0    71.6   67.5
+       ptInCir                Math                          186    15684512   19.2   11.8    71.2   67.5
+        distance              Math                          208     8330865   52.0   55.7    52.0   55.7
+     lineSlope                Math                          175      323398    0.3    0.2     0.5    0.3
+      lineSlope.mX            Math                          179      323398    0.0    0.0     0.1    0.0
+       slopeHelper            Math                          180      323398    0.1    0.0     0.1    0.0
+      lineSlope.mY            Math                          177      323398    0.0    0.0     0.1    0.0
+       slopeHelper            Math                          178      323398    0.1    0.0     0.1    0.0
+      lineSlope.m             Math                          176      323398    0.1    0.0     0.1    0.0
+     pY                       Math                          174      323938    0.0    0.0     0.0    0.0
+     pX                       Math                          169      323738    0.0    0.0     0.0    0.0
+  goodCircles                 Main                          156           1    0.0    0.0     0.0    0.0
+   circumscribeTri            Math                          211         187    0.0    0.0     0.0    0.0
+    circumscribeTri.radius    Math                          232         187    0.0    0.0     0.0    0.0
+     distance                 Math                          233         187    0.0    0.0     0.0    0.0
+    circumscribeTri.center    Math                          213         187    0.0    0.0     0.0    0.0
+     centerFromPts            Math                          214         187    0.0    0.0     0.0    0.0
+      centerFromPts.newY      Math                          231         187    0.0    0.0     0.0    0.0
+      centerFromPts.mB        Math                          223         187    0.0    0.0     0.0    0.0
+       lineSlope              Math                          224         187    0.0    0.0     0.0    0.0
+        lineSlope.mX          Math                          228         187    0.0    0.0     0.0    0.0
+         slopeHelper          Math                          229         187    0.0    0.0     0.0    0.0
+        lineSlope.mY          Math                          226         187    0.0    0.0     0.0    0.0
+         slopeHelper          Math                          227         187    0.0    0.0     0.0    0.0
+        lineSlope.m           Math                          225         187    0.0    0.0     0.0    0.0
+      centerFromPts.mA        Math                          216         187    0.0    0.0     0.0    0.0
+       lineSlope              Math                          217         187    0.0    0.0     0.0    0.0
+        lineSlope.mX          Math                          221         187    0.0    0.0     0.0    0.0
+         slopeHelper          Math                          222         187    0.0    0.0     0.0    0.0
+        lineSlope.mY          Math                          219         187    0.0    0.0     0.0    0.0
+         slopeHelper          Math                          220         187    0.0    0.0     0.0    0.0
+        lineSlope.m           Math                          218         187    0.0    0.0     0.0    0.0
+      centerFromPts.newX      Math                          215         187    0.0    0.0     0.0    0.0
+   cirToCircleLst             Main                          157         188    0.0    0.0     0.0    0.0
+    cirToCircle               Main                          210         187    0.0    0.0     0.0    0.0
+     pY                       Math                          230         187    0.0    0.0     0.0    0.0
+     pX                       Math                          212         187    0.0    0.0     0.0    0.0
+  dots                        Main                          155           1    0.0    0.0     0.0    0.0
+   intsToDots                 Main                          235         101    0.0    0.0     0.0    0.0
+    mydot                     Main                          237         100    0.0    0.0     0.0    0.0
+   triToLine                  Main                          234         187    0.0    0.0     0.0    0.0
+  main                        Main                          154           1    0.1    0.1     0.1    0.1
